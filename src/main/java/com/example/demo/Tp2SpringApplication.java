@@ -45,6 +45,13 @@ public class Tp2SpringApplication implements CommandLineRunner {
 		
 		
 		auteurImpl.Save(new Auteur(null, "Chakir", "Hamada", "RR111111", new Date(2,2, 2023), "hamasa.chakir@gmail.com",null));
+		auteurImpl.Save(new Auteur(null, "Hamidi", "Zayn", "RR111111", new Date(2,2, 2023), "Zayn.Hamidi@gmail.com",null));
+		auteurImpl.Save(new Auteur(null, "Naciri", "Amine", "RR111111", new Date(2,2, 2023), "Amine.Naciri@gmail.com",null));
+		auteurImpl.Save(new Auteur(null, "hokari", "Zohaire", "RR111111", new Date(2,2, 2023), "Zohaire.hokari@gmail.com",null));
+		auteurImpl.Save(new Auteur(null, "Fatihi", "Mohessin", "RR111111", new Date(2,2, 2023), "Mohessin.Fatihi@gmail.com",null));
+		
+		
+		
 	}
 
 }

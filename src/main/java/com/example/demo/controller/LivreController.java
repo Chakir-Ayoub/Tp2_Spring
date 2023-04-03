@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.Entity.Auteur;
 import com.example.demo.Entity.Livre;
+import com.example.demo.repository.AuteurRepository;
 import com.example.demo.repository.LivreRepository;
 import com.example.demo.serviceImpl.LivreImpl;
 
@@ -28,6 +30,8 @@ public class LivreController {
 	LivreImpl impl;
 	@Autowired
 	LivreRepository livreRepository;
+	@Autowired 
+	AuteurRepository auteurRepository;
 	@PostMapping
 	public Livre Save(@RequestBody Livre livre) {
 		return impl.Save(livre);
@@ -53,5 +57,6 @@ public class LivreController {
 			@RequestParam("end-date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate){
 		return livreRepository.findBydateEditionBetween(startDate, endDate);
 	}
+	
 	
 }
