@@ -24,10 +24,6 @@ public class Personne {
 	@Column
 	private Date dateNaissance;
 	
-	public Personne() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 	public Personne(Integer id, String nom, String prenom, String cin, Date dateNaissance) {
 		super();
@@ -37,6 +33,13 @@ public class Personne {
 		this.cin = cin;
 		this.dateNaissance = dateNaissance;
 	}
+
+	
+	public Personne() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 
 	public Integer getId() {
 		return id;

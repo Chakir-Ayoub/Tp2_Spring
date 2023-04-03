@@ -9,28 +9,23 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.Auteur;
 import com.example.demo.repository.AuteurRepository;
-import com.example.demo.repository.PersonneRepository;
 import com.example.demo.service.Dao;
 
 @Service
-public class AuteurImpl  {
+public class AuteurImpl implements Dao<Auteur> {
 	
 	@Autowired
 	AuteurRepository auteurRepository;
-	@Autowired
-	PersonneRepository personneRepository;
 	
+	@Override
 	public Auteur Save(Auteur t) {
 		// TODO Auto-generated method stub
-		Auteur auteur=new Auteur();
-		BeanUtils.copyProperties(t, auteur);
-		return auteurRepository.save(auteur);
+		return auteurRepository.save(t);
 	}
-
-	
-	public Auteur Update(String email, Auteur t) {
+	@Override
+	public Auteur Update(Integer id, Auteur t) {
 		// TODO Auto-generated method stub
-		Auteur auteur=auteurRepository.findByemail(email);
+		Auteur auteur=auteurRepository.findByid(id);
 		if(auteur==null) throw new RuntimeException("Not Found");
 		
 		auteur.setCin(t.getCin());
@@ -40,26 +35,27 @@ public class AuteurImpl  {
 		auteur.setPrenom(t.getPrenom());
 		return auteurRepository.save(auteur);
 	}
-
-	
-	public void Delete(String email) {
+	@Override
+	public void Delete(Integer id) {
 		// TODO Auto-generated method stub
-		Auteur auteur=auteurRepository.findByemail(email);
+		Auteur auteur=auteurRepository.findByid(id);
 		if(auteur==null) throw new RuntimeException("Not Found");
-	 auteurRepository.delete(auteur);	
+		 auteurRepository.delete(auteur);
+		
 	}
-
-	public Auteur GetById(String email) {
+	@Override
+	public Auteur GetById(Integer id) {
 		// TODO Auto-generated method stub
-		Auteur auteur=auteurRepository.findByemail(email);
+		Auteur auteur=auteurRepository.findByid(id);
 		if(auteur==null) throw new RuntimeException("Not Found");
 		return auteur;
 	}
-
-	
+	@Override
 	public List<Auteur> GetAll() {
 		// TODO Auto-generated method stub
 		return auteurRepository.findAll();
 	}
+	
+
 
 }
