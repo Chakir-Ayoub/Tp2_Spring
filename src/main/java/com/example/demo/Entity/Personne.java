@@ -29,6 +29,15 @@ public class Personne {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Personne(Integer id, String nom, String prenom, String cin, Date dateNaissance) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.cin = cin;
+		this.dateNaissance = dateNaissance;
+	}
+
 	public Integer getId() {
 		return id;
 	}

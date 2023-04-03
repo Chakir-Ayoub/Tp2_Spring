@@ -27,6 +27,11 @@ public class Auteur extends Personne {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void addlivre(Livre livre) {
+		this.livres.add(livre);
+	}
+
 	public String getEmail() {
 		return email;
 	}

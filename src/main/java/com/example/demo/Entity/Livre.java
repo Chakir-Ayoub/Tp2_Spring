@@ -31,6 +31,15 @@ public class Livre {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Livre(Integer id, String isbn, String titre, Date dateEdition) {
+		super();
+		this.id = id;
+		this.isbn = isbn;
+		this.titre = titre;
+		this.dateEdition = dateEdition;
+	}
+
 	public Integer getId() {
 		return id;
 	}
